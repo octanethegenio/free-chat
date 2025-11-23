@@ -1,0 +1,5 @@
+{
+  "name": "OmniChat - OpenRouter Client",
+  "description": "A high-performance, snappy chat client for OpenRouter models with a clean, consumer-ready interface.",
+  "requestFramePermissions": []
+}

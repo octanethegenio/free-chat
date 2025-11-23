@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>OmniChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
+            },
+            colors: {
+              // Strict Neutral/Zinc Gray Palette to remove all blue tints
+              gray: {
+                50: '#fafafa',
+                100: '#f5f5f5',
+                200: '#e5e5e5',
+                300: '#d4d4d4',
+                400: '#a3a3a3',
+                500: '#737373',
+                600: '#525252',
+                700: '#404040',
+                750: '#333333', 
+                800: '#262626',
+                850: '#1f1f1f',
+                900: '#171717',
+                950: '#0a0a0a',
+              },
+              sidebar: '#171717',
+              main: '#212121',
+              input: '#2f2f2f',
+              'user-bubble': '#2f2f2f',
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 0.3s ease-out forwards',
+              'slide-up': 'slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4d4d4;
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #424242;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a3a3a3;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #525252;
+      }
+      
+      /* Hide scrollbar utility */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      body {
+        background-color: #fafafa; /* Neutral 50 */
+        color: #171717; /* Neutral 900 */
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        accent-color: #525252; 
+      }
+      
+      .dark body {
+        background-color: #212121;
+        color: #ececec;
+        accent-color: #a3a3a3;
+      }
+      
+      /* Override default selection color to neutral gray */
+      ::selection {
+        background-color: #e5e5e5;
+        color: #171717;
+      }
+      .dark ::selection {
+        background-color: #525252;
+        color: #ffffff;
+      }
+
+      /* Override default focus rings to neutral */
+      *:focus-visible {
+        outline-color: #737373;
+      }
+
+      /* Markdown Styles */
+      .markdown-body pre {
+        background-color: transparent !important;
+        padding: 0;
+        border-radius: 0;
+        overflow-x: auto;
+        margin-bottom: 0;
+        border: none;
+      }
+      .markdown-body code {
+        font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      }
+      .markdown-body p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+      .markdown-body ul, .markdown-body ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "uuid": "https://esm.sh/uuid@9.0.1",
+    "react-markdown": "https://esm.sh/react-markdown@8.0.7?deps=react@18.2.0",
+    "remark-gfm": "https://esm.sh/remark-gfm@3.0.1?deps=react@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.263.1?deps=react@18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
